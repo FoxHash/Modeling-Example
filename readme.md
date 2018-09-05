@@ -4,3 +4,9 @@ This repository contains examples to demonstrate and test the function of the mo
 
 For a quick start, it is recommended to import the examples for Postman and use them. You can find the file at `examples-modeling/postman/erd_modeling.json`.
 
+
+
+### Postman example
+
+The postman file is configured to take a snapshot of the tool on the local machine. The port is 8080.
+
