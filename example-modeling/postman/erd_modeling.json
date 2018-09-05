@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "24600ee8-0079-4f3e-85d8-a6688f090234",
+		"name": "ERD Modeling Tool",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create complete model",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"model_id\" : \"testmodel\",\n  \"entities\" : [\n    {\n      \"id\" : \"Customer\",\n      \"weak_entity\" : false,\n      \"attributes\" : [\n        {\n          \"name\" : \"Name\",\n          \"key\" : true,\n          \"weak_key\" : false,\n          \"compounded_value\" : false,\n          \"multi_value\" : false,\n          \"derived_value\" : false\n        },\n        {\n          \"name\" : \"Customer-No\",\n          \"key\" : false,\n          \"weak_key\" : false,\n          \"compounded_value\" : false,\n          \"multi_value\" : false,\n          \"derived_value\" : false\n        }\n      ]\n    },\n    {\n      \"id\" : \"Product\",\n      \"weak_entity\" : false,\n      \"attributes\" : [\n        {\n          \"name\" : \"Date\",\n          \"key\" : false,\n          \"weak_key\" : false,\n          \"compounded_value\" : false,\n          \"multi_value\" : false,\n          \"derived_value\" : true\n        },\n        {\n          \"name\" : \"Product-No\",\n          \"key\" : true,\n          \"weak_key\" : false,\n          \"compounded_value\" : false,\n          \"multi_value\" : false,\n          \"derived_value\" : false\n        }\n      ]\n    }\n  ],\n  \"relationships\" : [\n    {\n      \"id\" : \"rel01\",\n      \"description\" : \"purchase\"\n    }\n  ],\n  \"connections\" : [\n    {\n      \"id\" : \"con01\",\n      \"relationship\" : \"rel01\",\n      \"entity\" : \"Customer\",\n      \"cardinality\" : \"1:1\"\n    },\n    {\n      \"id\" : \"con02\",\n      \"relationship\" : \"rel01\",\n      \"entity\" : \"Product\",\n      \"cardinality\" : \"1:n\"\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/erd/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create complete model (with isa)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"model_id\" : \"testmodel-isa\",\n  \"entities\" : [\n    {\n      \"id\" : \"Customer\",\n      \"weak_entity\" : false,\n      \"attributes\" : [\n        {\n          \"name\" : \"Name\",\n          \"key\" : true,\n          \"weak_key\" : false,\n          \"compounded_value\" : false,\n          \"multi_value\" : false,\n          \"derived_value\" : false\n        },\n        {\n          \"name\" : \"Customer-No\",\n          \"key\" : false,\n          \"weak_key\" : false,\n          \"compounded_value\" : false,\n          \"multi_value\" : false,\n          \"derived_value\" : false\n        }\n      ]\n    },\n    {\n      \"id\" : \"Private customer\",\n      \"weak_entity\" : false,\n      \"attributes\" : [\n        {\n          \"name\" : \"First name\",\n          \"key\" : true,\n          \"weak_key\" : false,\n          \"compounded_value\" : false,\n          \"multi_value\" : false,\n          \"derived_value\" : false\n        }\n      ]\n    },\n    {\n      \"id\" : \"Business customer\",\n      \"weak_entity\" : false,\n      \"attributes\" : [\n        {\n          \"name\" : \"Business name\",\n          \"key\" : true,\n          \"weak_key\" : false,\n          \"compounded_value\" : false,\n          \"multi_value\" : false,\n          \"derived_value\" : false\n        }\n      ]\n    },\n    {\n      \"id\" : \"Product\",\n      \"weak_entity\" : false,\n      \"attributes\" : [\n        {\n          \"name\" : \"Date\",\n          \"key\" : false,\n          \"weak_key\" : false,\n          \"compounded_value\" : false,\n          \"multi_value\" : false,\n          \"derived_value\" : true\n        },\n        {\n          \"name\" : \"Product-No\",\n          \"key\" : true,\n          \"weak_key\" : false,\n          \"compounded_value\" : false,\n          \"multi_value\" : false,\n          \"derived_value\" : false\n        }\n      ]\n    }\n  ],\n  \"relationships\" : [\n    {\n      \"id\" : \"rel01\",\n      \"description\" : \"purchase\"\n    }\n  ],\n  \"connections\" : [\n    {\n      \"id\" : \"con01\",\n      \"relationship\" : \"rel01\",\n      \"entity\" : \"Customer\",\n      \"cardinality\" : \"1:1\"\n    },\n    {\n      \"id\" : \"con02\",\n      \"relationship\" : \"rel01\",\n      \"entity\" : \"Product\",\n      \"cardinality\" : \"1:n\"\n    }\n  ],\n  \"isa-relationships\" : [\n    {\n      \"id\" : \"isa01\"\n    }\n  ],\n  \"isa-connections\" : [\n    {\n      \"id\" : \"isacon01\",\n      \"connection_type\" : \"parent\",\n      \"isarelationship\" : \"isa01\",\n      \"entity\" : \"Customer\"\n    },\n    {\n      \"id\" : \"isacon02\",\n      \"connection_type\" : \"child\",\n      \"isarelationship\" : \"isa01\",\n      \"entity\" : \"Private customer\"\n    },\n    {\n      \"id\" : \"isacon03\",\n      \"connection_type\" : \"child\",\n      \"isarelationship\" : \"isa01\",\n      \"entity\" : \"Business customer\"\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/erd/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Demo Validation (Create complete model)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/erd/validate/testmodel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"validate",
+						"testmodel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create empty model (manual mode)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/erd/create/foo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"create",
+						"foo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create entity (manual mode)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\" : \"Customer\",\n  \"weak_entity\" : false,\n  \"attributes\" : [\n    {\n      \"name\" : \"Name\",\n      \"key\" : true,\n      \"weak_key\" : false,\n      \"compounded_value\" : false,\n      \"multi_value\" : false,\n      \"derived_value\" : false\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/erd/create/foo/entity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"create",
+						"foo",
+						"entity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create relationship (manual mode)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\" : \"rel01\",\n  \"description\" : \"verfassen\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/erd/create/foo/relationship",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"create",
+						"foo",
+						"relationship"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create is-a relationship (manual mode)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"isa01\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/erd/create/foo/isa-relationship",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"create",
+						"foo",
+						"isa-relationship"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crete connection (manual mode)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\" : \"con01\",\n  \"relationship\" : \"rel01\",\n  \"entity\" : \"Customer\",\n  \"cardinality\" : \"1:1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/erd/connect/relationship/foo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"connect",
+						"relationship",
+						"foo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create is-a connection (parent) (manual mode)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"isacon01\",\n  \"connection_type\": \"parent\",\n  \"isarelationship\": \"isa01\",\n  \"entity\": \"Customer\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/erd/connect/isa-relationship/foo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"connect",
+						"isa-relationship",
+						"foo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create is-a connection (child) (manual mode)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"isacon02\",\n  \"connection_type\": \"child\",\n  \"isarelationship\": \"isa01\",\n  \"entity\": \"Customer\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/erd/connect/isa-relationship/foo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"connect",
+						"isa-relationship",
+						"foo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch model in Json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/erd/model/foo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"erd",
+						"model",
+						"foo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
