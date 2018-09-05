@@ -1,0 +1,6 @@
+{
+    "id": "con01",
+    "relationship": "rel01",
+    "entity": "Autor",
+    "cardinality": "1:n"
+}

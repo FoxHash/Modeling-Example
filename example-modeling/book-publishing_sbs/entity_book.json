@@ -1,0 +1,22 @@
+{
+    "id": "Buch",
+    "weak_entity": false,
+    "attributes": [
+        {
+            "name": "ISBN-Nr.",
+            "key": true,
+            "weak_key": false,
+            "compounded_value": false,
+            "multi_value": false,
+            "derived_value": false
+        },
+        {
+            "name": "Title",
+            "key": false,
+            "weak_key": false,
+            "compounded_value": false,
+            "multi_value": false,
+            "derived_value": false
+        }
+    ]
+}

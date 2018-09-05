@@ -1,0 +1,14 @@
+{
+    "id": "Autor",
+    "weak_entity": false,
+    "attributes": [
+        {
+            "name": "Name",
+            "key": false,
+            "weak_key": false,
+            "compounded_value": false,
+            "multi_value": false,
+            "derived_value": false
+        }
+    ]
+}
