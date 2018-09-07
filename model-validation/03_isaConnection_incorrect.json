@@ -1,0 +1,146 @@
+{
+    "model_id": "val_03",
+    "entities": [
+        {
+            "id": "Kunde",
+            "weak_entity": false,
+            "attributes": [
+                {
+                    "name": "Name",
+                    "key": false,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                },
+                {
+                    "name": "Adresse",
+                    "key": false,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                }
+            ]
+        },
+        {
+            "id": "Privatkunde",
+            "weak_entity": false,
+            "attributes": [
+                {
+                    "name": "Geburtsdatum",
+                    "key": false,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                }
+            ]
+        },
+        {
+            "id": "Geschäftskunde",
+            "weak_entity": false,
+            "attributes": [
+                {
+                    "name": "USt-IdNr.",
+                    "key": false,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                }
+            ]
+        },
+        {
+            "id": "Produkt",
+            "weak_entity": false,
+            "attributes": [
+                {
+                    "name": "EAN",
+                    "key": true,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                },
+                {
+                    "name": "Produktname",
+                    "key": false,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                },
+                {
+                    "name": "Preis",
+                    "key": false,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "id": "rel01",
+            "description": "kauft"
+        },
+        {
+            "id": "rel02",
+            "description": "kauft"
+        }
+    ],
+    "isa-relationships": [
+        {
+            "id": "isa-rel01"
+        }
+    ],
+    "connections": [
+        {
+            "id": "con01",
+            "relationship": "rel01",
+            "entity": "Kunde",
+            "cardinality": "1:1"
+        },
+        {
+            "id": "con02",
+            "relationship": "rel01",
+            "entity": "Produkte",
+            "cardinality": "1:n"
+        },
+        {
+            "id": "con03",
+            "relationship": "rel02",
+            "entity": "Geschäftskunde",
+            "cardinality": "1:1"
+        },
+        {
+            "id": "con04",
+            "relationship": "rel02",
+            "entity": "Produkte",
+            "cardinality": "1:n"
+        }
+    ]
+    "isa-connections": [
+        {
+            "id": "isa-con01",
+            "connection_type": "parent",
+            "isarelationship": "isa-rel01",
+            "entity": "Kunde"
+        },
+        {
+            "id": "isa-con02",
+            "connection_type": "child",
+            "isarelationship": "isa-rel01",
+            "entity": "Privatkunde"
+        },
+        {
+            "id": "isa-con03",
+            "connection_type": "child",
+            "isarelationship": "isa-rel01",
+            "entity": "Geschäftskunde"
+        }
+    ]
+}

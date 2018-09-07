@@ -1,0 +1,41 @@
+{
+    "model_id": "val_06",
+    "entities": [
+        {
+            "id": "Mitarbeiter",
+            "weak_entity": false,
+            "attributes": [
+                {
+                    "name": "Name",
+                    "key": false,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                },
+                {
+                    "name": "Personalnr.",
+                    "key": false,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "id": "rel01",
+            "description": "leitet"
+        }
+    ],
+    "connections": [
+        {
+            "id": "con01",
+            "relationship": "rel01",
+            "entity": "Mitarbeiter",
+            "cardinality": "1:1"
+        }
+    ]
+}

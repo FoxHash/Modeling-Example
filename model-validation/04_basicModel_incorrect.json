@@ -1,0 +1,52 @@
+{
+    "model_id": "val_04",
+    "entities": [
+        {
+            "id": "Student",
+            "weak_entity": false,
+            "attributes": [
+                {
+                    "name": "Name",
+                    "key": false,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                },
+                {
+                    "name": "Matrikelnr.",
+                    "key": false,
+                    "weak_key": false,
+                    "compounded_value": false,
+                    "multi_value": false,
+                    "derived_value": false
+                }
+            ]
+        },
+        {
+            "id": "Universität",
+            "weak_entity": false,
+            "attributes": []
+        }
+    ],
+    "relationships": [
+        {
+            "id": "rel01",
+            "description": "immatrikuliert"
+        }
+    ],
+    "connections": [
+        {
+            "id": "con01",
+            "relationship": "rel01",
+            "entity": "Student",
+            "cardinality": "1:n"
+        },
+        {
+            "id": "con02",
+            "relationship": "rel01",
+            "entity": "Universität",
+            "cardinality": "1:1"
+        }
+    ]
+}
