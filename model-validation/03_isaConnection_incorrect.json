@@ -7,19 +7,11 @@
             "attributes": [
                 {
                     "name": "Name",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 },
                 {
                     "name": "Adresse",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 }
             ]
         },
@@ -29,11 +21,7 @@
             "attributes": [
                 {
                     "name": "Geburtsdatum",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 }
             ]
         },
@@ -43,11 +31,7 @@
             "attributes": [
                 {
                     "name": "USt-IdNr.",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 }
             ]
         },
@@ -57,27 +41,15 @@
             "attributes": [
                 {
                     "name": "EAN",
-                    "key": true,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "key attribute"
                 },
                 {
                     "name": "Produktname",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 },
                 {
                     "name": "Preis",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 }
             ]
         }

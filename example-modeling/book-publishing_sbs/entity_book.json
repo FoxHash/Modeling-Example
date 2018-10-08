@@ -4,19 +4,11 @@
     "attributes": [
         {
             "name": "ISBN-Nr.",
-            "key": true,
-            "weak_key": false,
-            "compounded_value": false,
-            "multi_value": false,
-            "derived_value": false
+            "property": "key attribute"
         },
         {
             "name": "Title",
-            "key": false,
-            "weak_key": false,
-            "compounded_value": false,
-            "multi_value": false,
-            "derived_value": false
+            "property": "attribute"
         }
     ]
 }

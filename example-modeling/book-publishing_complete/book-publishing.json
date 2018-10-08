@@ -7,11 +7,7 @@
             "attributes": [
                 {
                     "name": "Name",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 }
             ]
         },
@@ -21,19 +17,11 @@
             "attributes": [
                 {
                     "name": "ISBN-Nr.",
-                    "key": true,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": true
+                    "property": "key attribute"
                 },
                 {
                     "name": "Title",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 }
             ]
         },
@@ -43,19 +31,11 @@
             "attributes": [
                 {
                     "name": "Name",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": true
+                    "property": "derived value attribute"
                 },
                 {
                     "name": "Sitz",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 }
             ]
         }

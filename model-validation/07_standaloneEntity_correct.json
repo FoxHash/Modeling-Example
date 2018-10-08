@@ -7,19 +7,11 @@
             "attributes": [
                 {
                     "name": "Name",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 },
                 {
                     "name": "Matrikelnr.",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 }
             ]
         },
@@ -29,19 +21,11 @@
             "attributes": [
                 {
                     "name": "Name",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 },
                 {
                     "name": "Ort",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 }
             ]
         },
@@ -51,19 +35,11 @@
             "attributes": [
                 {
                     "name": "Name",
-                    "key": false,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "attribute"
                 },
                 {
                     "name": "VL-Nr.",
-                    "key": true,
-                    "weak_key": false,
-                    "compounded_value": false,
-                    "multi_value": false,
-                    "derived_value": false
+                    "property": "key attribute"
                 }
             ]
         }
