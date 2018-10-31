@@ -1,5 +1,5 @@
 {
-    "model_id": "val_06",
+    "model_id": "val_05",
     "entities": [
         {
             "id": "Mitarbeiter",
@@ -11,7 +11,7 @@
                 },
                 {
                     "name": "Personalnr.",
-                    "property": "attribute"
+                    "property": "key attribute"
                 }
             ]
         }
@@ -25,6 +25,12 @@
     "connections": [
         {
             "id": "con01",
+            "relationship": "rel01",
+            "entity": "Mitarbeiter",
+            "cardinality": "1:n"
+        },
+        {
+            "id": "con02",
             "relationship": "rel01",
             "entity": "Mitarbeiter",
             "cardinality": "1:1"

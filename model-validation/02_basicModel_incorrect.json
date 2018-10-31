@@ -11,7 +11,7 @@
                 },
                 {
                     "name": "Matrikelnr.",
-                    "property": "attribute"
+                    "property": "key attribute"
                 }
             ]
         },

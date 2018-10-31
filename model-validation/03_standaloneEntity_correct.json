@@ -11,7 +11,7 @@
                 },
                 {
                     "name": "Matrikelnr.",
-                    "property": "attribute"
+                    "property": "key attribute"
                 }
             ]
         },
@@ -21,7 +21,7 @@
             "attributes": [
                 {
                     "name": "Name",
-                    "property": "attribute"
+                    "property": "key attribute"
                 },
                 {
                     "name": "Ort",

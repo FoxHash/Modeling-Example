@@ -1,5 +1,5 @@
 {
-    "model_id": "val_02",
+    "model_id": "val_03",
     "entities": [
         {
             "id": "Kunde",
@@ -7,7 +7,7 @@
             "attributes": [
                 {
                     "name": "Name",
-                    "property": "attribute"
+                    "property": "key attribute"
                 },
                 {
                     "name": "Adresse",
@@ -58,6 +58,10 @@
         {
             "id": "rel01",
             "description": "kauft"
+        },
+        {
+            "id": "rel02",
+            "description": "kauft"
         }
     ],
     "isa-relationships": [
@@ -75,6 +79,18 @@
         {
             "id": "con02",
             "relationship": "rel01",
+            "entity": "Produkte",
+            "cardinality": "1:n"
+        },
+        {
+            "id": "con03",
+            "relationship": "rel02",
+            "entity": "Geschäftskunde",
+            "cardinality": "1:1"
+        },
+        {
+            "id": "con04",
+            "relationship": "rel02",
             "entity": "Produkte",
             "cardinality": "1:n"
         }
